@@ -1,0 +1,2 @@
+# transcription
+faster-whisperを使用した文字起こしWebアプリケーションです
