@@ -1,0 +1,5 @@
+pydub
+openpyxl
+faster_whisper
+flask
+waitress

@@ -1,0 +1,78 @@
+{# Flaskではテンプレートエンジンとしてjinja2を使用する。{{}},{%%}を使ってptyhonの変数やロジックをHTMLに埋め込むことができる #}
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>文字起こしアプリ</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h1>高精度文字起こしアプリ</h1>
+    <p>アップロードされた音声ファイル（MP4,MP3,WAV）を、自動で文字起こしするツールです</p>
+
+    <!-- アップロードフォーム -->
+    <div id="drop-area" onclick="document.getElementById('fileElem').click()">
+        <form class="my-form">
+            <p id="fileName">ここに動画をドラッグ＆ドロップ、またはクリックしてファイルを選択</p>
+            <input type="file" id="fileElem" accept="video/*, audio/*">
+            <p id="fileName"></p>
+        </form>
+    </div>
+
+    <!-- アップロード進捗 -->
+    <div id="upload-area">
+        <!-- アップロードボタン -->
+        <button id="uploadButton" disabled>アップロード</button>
+        <!-- 進捗バー -->
+        
+        <div id="progress-bar">
+            <div id="progress-bar-inner"></div>
+            <span id="progress-text"></span>
+        </div>
+    </div>
+
+    <!-- JavaScriptファイルを読み込み -->
+    <script src="{{ url_for('static', filename='upload.js') }}"></script>
+    
+    <h1>動画一覧</h1>
+    <table>
+        <tr>
+            <th>No</th>
+            <th>動画タイトル</th>
+            <th>ステータス</th>
+            <th>削除</th>
+        </tr>
+        {# 以下がapp.pyから引用した部分 #}
+        {% for result in results %}
+        <tr>
+            <td>{{ loop.index }}</td>
+            <td>{{ result['title'] }}</td>
+            <td>
+                {% if result['status'] == 0 %}
+                    <p>開始前</p>
+                    <form action="{{ url_for('my_blueprint.transcription', id=result['id']) }}" method="POST">
+                        <button type="submit">文字起こし実行</button>
+                    </form>                
+                {% elif result['status'] == 1 %}
+                    待機中
+                {% elif result['status'] == 2 %}
+                    実施中
+                {% elif result['status'] == 3 %}
+                    <form action="{{ url_for('my_blueprint.download', id=result['id']) }}" method="GET">
+                        <button type="submit">ダウンロード</button>
+                    </form>
+                {% elif result['status'] == 4 %}
+                    文字起こし中にエラーが発生しました
+                {% endif %}
+            </td>
+            <td class="actions">
+                <form action="{{ url_for('my_blueprint.delete', id=result['id']) }}" method="POST">
+                    <button type="submit" class="delete-button">削除</button>
+                </form>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
