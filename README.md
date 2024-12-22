@@ -19,12 +19,24 @@ faster-whisperを使用した文字起こしWebアプリケーションです。
 
 1. このリポジトリをクローンします。
 ```
-https://github.com/takahiro1223/transcription
+git clone https://github.com/takahiro1223/transcription
 ```
 
-1. 仮想環境を作成し、必要なパッケージをインストールします。
-
-2. アプリケーションを起動します。
+2. 仮想環境を作成し、必要なパッケージをインストールします。
+```
+python -m venv venv
+```
+```
+.\venv\Script\activate
+```
+```
+pip install -r requirements.txt
+```
+3. アプリケーションを起動します。
+```
+waitress-serve --host=0.0.0.0 --port=5000 app.app:app
+```
+http://localhost:5000にアクセス
 
 ### 使い方
 
