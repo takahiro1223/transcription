@@ -36,7 +36,7 @@ pip install -r requirements.txt
 ```
 waitress-serve --host=0.0.0.0 --port=5000 app.app:app
 ```
-http://localhost:5000にアクセス
+http://localhost:5000 にアクセス
 
 ### 使い方
 
