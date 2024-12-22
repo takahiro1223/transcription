@@ -48,7 +48,7 @@ http://localhost:5000 にアクセス
 
 ### ライセンス
 
-このプロジェクトはMITライセンスの下で公開されています。詳細については、LICENSEファイルをご覧ください。
+このプロジェクトは[クリエイティブ・コモンズ 表示-非営利-改変禁止 4.0 国際（CC BY-NC-ND 4.0）ライセンス](https://creativecommons.org/licenses/by-nc-nd/4.0/deed.ja)の下で公開されています。
 
 ### 作者情報
 
