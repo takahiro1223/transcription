@@ -10,7 +10,7 @@ def get_db_connection():
 # データベース作成
 def create_db():
     conn = get_db_connection()
-    # id:識別番号、title:動画ファイル名、status:文字起こし完了のフラグ、created_at:タスク作成日時
+    # id:識別番号、file_path:アップロード後のファイルパス、title:動画ファイル名、status:文字起こし完了のフラグ、zip_file_path:インストール時のzipファイルパス、created_at:タスク作成日時
     conn.execute('''
         CREATE TABLE IF NOT EXISTS results (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
