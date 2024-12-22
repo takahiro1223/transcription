@@ -52,5 +52,5 @@ http://localhost:5000 にアクセス
 
 ### 作者情報
 
-名前：Takahiro Furuya
+名前：Takahiro Furuya  
 GitHub：takahiro1223
