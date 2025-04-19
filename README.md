@@ -23,23 +23,27 @@ faster-whisperを使用した文字起こしWebアプリケーションです。
 ### 動画をアップロード
 ドラッグアンドドロップやファイル選択で画面上に動画を保持できる
 アップロードボタンを押すことで、「動画一覧」へのアップロードが行える
+
 ![Image](https://github.com/user-attachments/assets/a5f72161-6ea5-4ac4-a2f8-fd9857c64d18)
 ![Image](https://github.com/user-attachments/assets/2557fa0e-a0ca-4541-9411-bf80cf8a61bf)
 
 ### 文字起こしを実行
 文字起こしボタンを押すことでステータスが文字起こしが開始（ステータスが変更される）
 完了したらステータスがダウンロードボタンに変わる
+
 ![Image](https://github.com/user-attachments/assets/1e841d34-b3b4-48e7-a7d9-da55533eec5b)
 ![Image](https://github.com/user-attachments/assets/db46e5ed-e230-44d7-8bc5-80576244bd85)
 
 ### 文字起こし結果のダウンロード
 ダウンロードボタンを押すことでzip形式のフォルダが取得できる
 中身はExcelと分割された音声ファイル
+
 ![Image](https://github.com/user-attachments/assets/fc62b4b3-10f7-4b72-8eba-89cf702289f2)
 ![Image](https://github.com/user-attachments/assets/6ee7dc17-cc79-4e10-97f0-c02a2d0ab228)
 
 ### 文字起こし結果の削除
 削除ボタンを押すことで、文字起こし結果を削除することが可能
+
 ![Image](https://github.com/user-attachments/assets/fbf0e6d6-2ee3-4312-a0df-ad6dafce1b6d)
 
 ### インストール手順
