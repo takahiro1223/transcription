@@ -17,6 +17,11 @@ faster-whisperを使用した文字起こしWebアプリケーションです。
 
 ### 画面
 
+## トップ画面
+![Image](https://github.com/user-attachments/assets/fbf0e6d6-2ee3-4312-a0df-ad6dafce1b6d)
+
+## 動画をアップロード
+ドラッグアンドドロップやファイル選択でアップロードできます
 
 
 ### インストール手順
